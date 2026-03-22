@@ -8,7 +8,7 @@ import pytest
 from labs.lab_1.lab_1d import two_sum
 
 def test_valid():
-    assert two_sum([1, 4, 2, 5], 6) == [0, 3] or two_sum([1, 4, 2, 5]) == [1, 2]
+    assert two_sum([1, 4, 2, 5], 6) == [0, 3] or two_sum([1, 4, 2, 5], 6) == [1, 2]
     assert two_sum([1,2,3,4,5,6], 11) == [4, 5]
     assert two_sum([3, 9, 10, 2, 5], 11) == [1, 3]
 
