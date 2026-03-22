@@ -46,15 +46,25 @@ def get_sanitized_num(msg: str) -> float:
             print("Invalid input. Please try again.")
             continue
 
+def get_sanitized_input(msg: str, valid: list) -> str:
+    while True:
+        string = input(msg)
+        if string in valid:
+            return string
+        else:
+            print("Invalid input. Please try again from the valid options.")
+
+
 def main():
     
     print(f"===== Simple Calculator =====")
 
     # Ask the user for sample input 
     num1, num2 = None, None
+    options = ['add', 'subtract', 'multiply', 'divide']
     num1 = get_sanitized_num("Enter the first number: ")
-    num1 = get_sanitized_num("Enter the second number: ")
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+    num2 = get_sanitized_num("Enter the second number: ")
+    operation = get_sanitized_input("Enter the operation (add, subtract, multiply, divide): ", options).strip().lower()
 
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
